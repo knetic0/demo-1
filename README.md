@@ -17,7 +17,7 @@ Ayni islemi `register` içinde uygulayın.
 
 ### 2. go işlemleri
 
-`main.go` satir `37` ve `register.go` satir `25` de bulunan password degiskenine `postgres` şifrenizi giriniz.
+`main.go` satir `39` ve `register.go` satir `20` de bulunan password degiskenine `postgres` şifrenizi giriniz.
 
 ### 3. vue js işlemleri
 
