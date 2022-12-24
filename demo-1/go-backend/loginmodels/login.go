@@ -1,5 +1,5 @@
-func loginmodels
+package loginmodels
 
 func main() {
-	
+
 }
