@@ -23,7 +23,7 @@ Ayni islemi `register` içinde uygulayın.
 
 Terminalde `demo-1` dizininde iken aşağıdaki kodları çalıstırn: <br/>
 
-`yarn install`
+`yarn install` <br/>
 `npm install chart.js`
 
 ### 4. Aşağıdakı komutlar ile sistemi ayağa kaldırnız
