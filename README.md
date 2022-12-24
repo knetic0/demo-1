@@ -34,3 +34,7 @@ Sistemi ayağa kaldıramk için bir adet go için ve bir adet vuejs için iki ad
 İkinci terminal  `demo-1` dizininde `yarn serve` komutu çalıştırınız. <br/>
 
 
+
+https://user-images.githubusercontent.com/72500821/209441383-6289c64b-ca33-45b1-a0e8-3f3ab37b6591.mp4
+
+
