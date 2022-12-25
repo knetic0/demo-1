@@ -42,5 +42,9 @@ https://user-images.githubusercontent.com/72500821/209441383-6289c64b-ca33-45b1-
 
 https://user-images.githubusercontent.com/72500821/209480535-ce2be85b-78c8-4ae5-9f5e-789f8452f06d.mp4
 
+## 3. Admin Panel Tanıtım Videosu
+
+https://user-images.githubusercontent.com/96062915/209480755-4c5c0d07-c059-428a-aacd-ab1bfc78680f.mp4
+
 
 
