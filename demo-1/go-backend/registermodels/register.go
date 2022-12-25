@@ -4,13 +4,16 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
+	"strconv"
+	"time"
 
+	loginmodels "backend/loginmodels"
 	models "backend/models"
 
 	_ "github.com/lib/pq"
 )
 
-var Db *sql.DB
+var db *sql.DB
 var err error
 
 const (
@@ -29,21 +32,23 @@ func CheckError(e error) {
 
 func Initialize() {
 	ConnectionString := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
-	Db, err = sql.Open(user, ConnectionString)
+	db, err = sql.Open(user, ConnectionString)
 	CheckError(err)
 
 }
 
 func GetFromRegister(user_info models.User) {
-	res, err := Db.Exec("INSERT INTO register(name, email, password) VALUES($1, $2, $3)", user_info.Name, user_info.Email, user_info.Password)
+	res, err := db.Exec("INSERT INTO register(name, email, password, birthyear) VALUES($1, $2, $3, $4)", user_info.Name, user_info.Email, user_info.Password, user_info.Birthyear)
 	CheckError(err)
 	resAffected, _ := res.RowsAffected()
 	fmt.Printf("Rows affected -> %d", resAffected)
 }
 
-func TakePasswordWithEmail(login_info models.LoginUser) string {
+func TakePasswordWithEmail(login_info models.LoginUser) {
 	var pass string
-	err := Db.QueryRow("SELECT password FROM register WHERE email=$1", login_info.Email).Scan(&pass)
+	var year string
+
+	err = db.QueryRow("SELECT password, birthyear FROM register WHERE email=$1", string(login_info.Email)).Scan(&pass, &year)
 
 	switch {
 	case err == sql.ErrNoRows:
@@ -56,5 +61,30 @@ func TakePasswordWithEmail(login_info models.LoginUser) string {
 		fmt.Println("Success!")
 	}
 
-	return string(pass)
+	if login_info.Password == pass {
+
+		fmt.Println("Giris basarili.")
+
+		switch {
+		case err == sql.ErrNoRows:
+			log.Printf("No users with that Email")
+
+		case err != nil:
+			log.Fatal(err)
+
+		default:
+			fmt.Println("Success!")
+		}
+
+		integer_year, _ := strconv.Atoi(year)
+		age := time.Now().Year() - integer_year
+		fmt.Println(age)
+
+		loginmodels.Initialize()
+		loginmodels.Insert(login_info, age)
+		loginmodels.GetAge()
+
+	} else {
+		fmt.Println("Sifreniz yanlistir.")
+	}
 }

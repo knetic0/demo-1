@@ -166,6 +166,7 @@ export default {
       this.socket.send(JSON.stringify(login_information))
       this.socket.onmessage = (event) => {
         this.t_password = event.data
+        console.log(this.t_password)
         if (this.t_password === this.password) {
           console.log("Giris Basarili! Yonlendiriliyorsunuz...")
         } else {
