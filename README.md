@@ -17,7 +17,7 @@ Ayni islemi `register` içinde uygulayın.
 
 ### 2. go işlemleri
 
-`main.go` satir `39` ve `register.go` satir `20` de bulunan password degiskenine `postgres` şifrenizi giriniz.
+`main.go` satir `39`, `register.go` satir `20` ve `login.go` satir `16` da bulunan password degiskenine `postgres` şifrenizi giriniz.
 
 ### 3. vue js işlemleri
 
@@ -33,8 +33,14 @@ Sistemi ayağa kaldıramk için bir adet go için ve bir adet vuejs için iki ad
 İlk terminal ile `demo-1/go-backend` dosyasina gidiliniz ve burda terminale `go run main.go` yazınız. <br/>
 İkinci terminal  `demo-1` dizininde `yarn serve` komutu çalıştırınız. <br/>
 
-
+## 1. Aşama Tanıtım Videosu
 
 https://user-images.githubusercontent.com/72500821/209441383-6289c64b-ca33-45b1-a0e8-3f3ab37b6591.mp4
+
+## 2. Aşama Tanıtım Videosu
+
+
+https://user-images.githubusercontent.com/72500821/209480535-ce2be85b-78c8-4ae5-9f5e-789f8452f06d.mp4
+
 
 
